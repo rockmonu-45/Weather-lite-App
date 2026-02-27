@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Weather Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+       
+<body>
+
+    <div class="app-wrapper">
+        <div class="search-section">
+            <div class="search-box">
+                <i data-lucide="search" style="width:18px; opacity:0.6;"></i>
+                <input type="text" id="citySearch" placeholder="Search for a city">
+            </div>
+        </div>
+
+        <header class="main-header">
+            <h1 class="city-name" id="cityName">--</h1>
+            <div class="temp-display" id="mainTemp">--°</div>
+            <p class="condition" id="conditionText">Loading...</p>
+            <div class="high-low" id="highLow">
+                <span>H:--°</span>
+                <span>L:--°</span>
+            </div>
+        </header>
+
+        <section class="glass-container">
+            <div class="section-label">
+                <i data-lucide="clock" style="width:12px;"></i> HOURLY FORECAST
+            </div>
+            <div class="hourly-items" id="hourlyList"></div>
+        </section>
+
+        <section class="glass-container">
+            <div class="section-label">
+                <i data-lucide="calendar" style="width:12px;"></i> 5-DAY FORECAST
+            </div>
+            <div class="ten-day-container" id="dailyList"></div>
+        </section>
+
+        <div class="info-grid">
+            <div class="glass-card">
+                <div class="section-label"><i data-lucide="sun" style="width:12px;"></i> UV INDEX</div>
+                <div class="big-val" id="uvVal">0</div>
+                <div class="sub-val" id="uvText">Low</div>
+                <div class="gauge-bar uv-grad">
+                    <div class="indicator-dot" id="uvDot" style="left:0%;"></div>
+                </div>
+            </div>
+
+            <div class="glass-card">
+                <div class="section-label"><i data-lucide="droplets" style="width:12px;"></i> HUMIDITY</div>
+                <div class="big-val" id="humidity">0%</div>
+                <p class="card-footer">Moisture in the air.</p>
+            </div>
+
+            <div class="glass-card">
+                <div class="section-label"><i data-lucide="thermometer" style="width:12px;"></i> FEELS LIKE</div>
+                <div class="big-val" id="feelsLike">0°</div>
+                <p class="card-footer">Actual feel of the air.</p>
+            </div>
+
+            <div class="glass-card">
+                <div class="section-label"><i data-lucide="wind" style="width:12px;"></i> WIND</div>
+                <div class="big-val" id="windSpeed">0 km/h</div>
+                <p class="card-footer">Current wind speed.</p>
+            </div>
+        </div>
+
+        <footer class="app-footer">
+            <div class="footer-divider">Designed & Developed by Monu ❤️</div><br>
+            <p class="data-source">&copy; 2026 Monu | Data: OpenWeather</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

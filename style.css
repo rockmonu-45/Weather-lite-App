@@ -1,0 +1,172 @@
+:root {
+    --ios-bg: linear-gradient(180deg, #3a7bd5 0%, #00d2ff 100%);
+    --bg-cloudy: linear-gradient(180deg, #757f9a 0%, #d7dde8 100%);
+    --bg-night: linear-gradient(180deg, #0f2027 0%, #2c5364 100%);
+    --glass: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --text-dim: rgba(255, 255, 255, 0.65);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+    background: var(--ios-bg);
+    background-attachment: fixed;
+    transition: background 1s ease;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    min-height: 100vh;
+}
+
+.app-wrapper {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-box {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    backdrop-filter: blur(10px);
+    margin-bottom: 25px;
+}
+
+#citySearch {
+    background: transparent;
+    border: none;
+    color: white;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+}
+
+.main-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.city-name {
+    font-weight: 300;
+    font-size: 32px;
+}
+
+.temp-display {
+    font-size: 80px;
+    font-weight: 100;
+}
+
+.glass-container,
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.section-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-dim);
+    margin-bottom: 12px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.hourly-items {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.hourly-items::-webkit-scrollbar {
+    display: none;
+}
+
+.hour-item {
+    min-width: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.day-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.temp-bar-bg {
+    flex: 2;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    margin: 0 10px;
+    position: relative;
+}
+
+.temp-bar-fill {
+    position: absolute;
+    height: 100%;
+    background: linear-gradient(90deg, #ffcc00, #ff8800);
+    border-radius: 4px;
+}
+
+.info-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.glass-card {
+    flex: 1 1 calc(50% - 6px);
+    min-height: 140px;
+}
+
+.big-val {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.uv-grad {
+    background: linear-gradient(90deg, #32d74b, #ffd60a, #ff453a);
+    height: 4px;
+    position: relative;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.indicator-dot {
+    position: absolute;
+    top: -3px;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+}
+
+.app-footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    opacity: 0.6;
+}
